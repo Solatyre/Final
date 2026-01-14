@@ -61,9 +61,11 @@ export function HistogramPage() {
 
         if (compare && projectB) {
           const b = await api.getComplexityHistogram(projectB);
-          if (alive) setRows(mergeBuckets(a, b));
+          const merged = mergeBuckets(a, b);
+          if (alive) setRows(merged);
         } else {
-          if (alive) setRows(mergeBuckets(a));
+          const merged = mergeBuckets(a);
+          if (alive) setRows(merged);
         }
       } catch (e) {
         if (alive) setError(e instanceof Error ? e.message : "Failed to load histogram");
@@ -144,7 +146,9 @@ export function HistogramPage() {
             </ResponsiveContainer>
           </div>
 
-          <p className="small">Buckets: {rows.length}</p>
+          <p className="small">
+            Buckets: {rows.length} {compare && projectB ? " (comparing two projects)" : ""}
+          </p>
         </>
       )}
     </div>

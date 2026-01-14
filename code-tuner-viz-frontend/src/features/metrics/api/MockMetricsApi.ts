@@ -40,4 +40,3 @@ export class MockMetricsApi implements MetricsApi {
     ];
   }
 }
-
