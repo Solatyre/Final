@@ -1,4 +1,8 @@
-#RUNDOWN
+# Code Tuner Viz
+
+Dashboard for visualising software complexity metrics (class sizes, complexity distribution and trends over time).
+
+## Overview
 - **Frontend:** React + Vite + TypeScript + Recharts
 - **Backend:** Node.js + Express + TypeScript
 - **Database:** PostgreSQL (Poseidon)
